@@ -645,7 +645,7 @@
       endif
 
       if(nettype2>0) then
-#ifdef USE_NWM_BMI
+#ifdef USE_BMI
         ath2(1,1,:,1:2,1)=0.d0
         ath2(1,1,:,3,1)=-9999.d0
 #else
@@ -657,7 +657,7 @@
         j=nf90_get_var(ncid_elev2D,mm,ath2(1,1,1:nnode_et,2,1), &
     &(/1,1,1,ninv+2/),(/1,1,nnode_et,1/))
         if(j/=NF90_NOERR) call parallel_abort('MISC: elev time_series2')
-#endif /*USE_NWM_BMI*/
+#endif /*USE_BMI*/
       endif
 
       if(nfltype2>0) then
@@ -731,7 +731,7 @@
       endif !myrank==0
 
 !...  Source/sinks: read by rank 0 first
-#ifdef USE_NWM_BMI
+#ifdef USE_BMI
 
       if(nsources>0) then
         ninv=time/th_dt3(1)
@@ -861,7 +861,7 @@
         call mpi_bcast(ath3,max(1,nsources,nsinks)*ntracers*2*nthfiles3,MPI_REAL4,0,comm,istat)
 #endif
       endif 
-#endif /*USE_NWM_BMI*/
+#endif /*USE_BMI*/
 
 #ifdef USE_SED
 !...  Sediment model initialization
