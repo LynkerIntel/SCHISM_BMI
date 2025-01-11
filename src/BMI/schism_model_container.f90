@@ -1,4 +1,4 @@
-module test_model
+module schism_model_container
 
   type :: schism_type
       double precision :: model_start_time
@@ -48,4 +48,4 @@ module test_model
 
     end subroutine run
 
-end module test_model
+end module schism_model_container

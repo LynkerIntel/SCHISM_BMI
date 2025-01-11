@@ -26,7 +26,7 @@ module bmischism
 
   use, intrinsic :: iso_c_binding, only: c_ptr, c_loc, c_f_pointer
 
-  use test_model
+  use schism_model_container
 
   implicit none
 
