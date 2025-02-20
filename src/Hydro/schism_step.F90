@@ -1700,7 +1700,7 @@
           th_time3(2,2)=th_time3(2,2)+th_dt3(2)
         endif
 
-#else /*USE_NWM_BMI*/
+#else /*USE_BMI*/
 
         !Reading by rank 0
 #ifdef SH_MEM_COMM
